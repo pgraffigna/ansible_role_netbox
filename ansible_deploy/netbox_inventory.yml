@@ -1,0 +1,12 @@
+---
+plugin: netbox.netbox.nb_inventory
+api_endpoint: http://192.168.121.183:8000/
+token: '0123456789abcdef0123456789abcdef01234567'
+validate_certs: false
+config_context: false
+
+group_by:
+  - sites
+compose:
+  ansible_network_os: platform.slug
+

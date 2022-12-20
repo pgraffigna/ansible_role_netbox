@@ -1,0 +1,27 @@
+# instalando pip via python3
+curl -q https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py --user
+python3 -m pip install --user ansible --no-warn-script-location
+export PATH=$(pwd):$PATH
+
+# instalando coleccion netbox
+ansible-galaxy collection install netbox.netbox --force
+
+# instalando modulo pynetbox
+pip install pynetbox
+ 
+# netbox_inventory.yml
+---
+plugin: netbox.netbox.nb_inventory
+api_endpoint: http://netbox.example.com
+token: 0123456789abcdef0123456789abcdef01234567
+validate_certs: false
+config_context: false
+
+# chequear inventario de netbox
+ansible-inventory -i netbox_inventory.yml --list
+
+# chequear via curl respuesta via api a netbox
+curl -X GET -H "Authorization: Token 0123456789abcdef0123456789abcdef01234567" http://192.168.121.183:8000/api/ipam/prefixes/ -H "accept: application/json"
+
+
