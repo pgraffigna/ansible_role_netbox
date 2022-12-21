@@ -1,0 +1,21 @@
+---
+- include_vars: ../../vars_main.yml
+
+- name: Registrando locaciones
+  read_csv:
+   path: locaciones.csv
+  register: lista_locaciones
+
+- name: Creando locaciones
+  netbox.netbox.netbox_location:
+    netbox_url: "{{ nb_url }}"
+    netbox_token: "{{ nb_token }}"
+    data:
+      site: "{{ item.site }}"
+      name: "{{ item.name }}"
+      slug: "{{ item.slug }}"
+      tenant: "{{ item.tenant }}"
+      description: "{{ item.description }}"
+    state: present
+  loop: "{{ lista_locaciones.list }}"
+

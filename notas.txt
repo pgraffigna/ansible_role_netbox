@@ -1,8 +1,8 @@
 # instalando pip via python3
-curl -q https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py --user
+wget -q --show-progress --progress=bar:force 2>&1 https://bootstrap.pypa.io/get-pip.py -O get-pip.py
+python3 get-pip.py --user --no-warn-script-location
 python3 -m pip install --user ansible --no-warn-script-location
-export PATH=$(pwd):$PATH
+export PATH=/home/vagrant/.local/bin:$PATH
 
 # instalando coleccion netbox
 ansible-galaxy collection install netbox.netbox --force

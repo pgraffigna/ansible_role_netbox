@@ -4,5 +4,11 @@
   gather_facts: False
 
   roles:
+    - grupos_sitios
+    - inquilinos
     - regiones
-    - vlans
+    - sitios
+    - locaciones
+    - racks
+
+# los roles estan ordenados a proposito..sino no funca

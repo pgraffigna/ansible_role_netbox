@@ -1,0 +1,24 @@
+---
+- include_vars: ../../vars_main.yml
+
+- name: Registrando racks
+  read_csv:
+   path: racks.csv
+  register: lista_racks
+
+- name: Creando racks
+  netbox.netbox.netbox_rack:
+    netbox_url: "{{ nb_url }}"
+    netbox_token: "{{ nb_token }}"
+    data: 
+      name: "{{ item.name }}"
+      site: "{{ item.site }}"
+      #location: "{{ item.location }}"
+      tenant: "{{ item.tenant }}"
+      status: "{{ item.status }}"
+      type: "{{ item.type }}"
+      width: "{{ item.width }}"
+      u_height: "{{ item.u_height }}"
+    state: present
+  loop: "{{ lista_racks.list }}"
+

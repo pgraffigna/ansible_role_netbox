@@ -1,0 +1,18 @@
+site,name,tenant,status,role,type,width,u_height
+NZAKL01,NZAKL01-RK-01,Sales,active,Infrastructure,4-post cabinet,19,22
+MYKUL01,MYKUL01-RK-01,Marketing,active,Infrastructure,4-post cabinet,19,22
+AUSYD01,AUSYD01-RK-01,Consulting,active,Infrastructure,4-post cabinet,19,22
+AUMEL01,AUMEL01-RK-01,Consulting,active,Infrastructure,4-post cabinet,19,22
+CAMON01,CAMON01-RK-01,Consulting,active,Infrastructure,4-post cabinet,19,22
+USDEN01,USDEN01-RK-01,Consulting,active,Infrastructure,4-post cabinet,19,22
+USLAX01,USLAX01-RK-01,Sales,active,Infrastructure,4-post cabinet,19,22
+UKLON01,UKLON01-RK-01,Finance,active,Infrastructure,4-post cabinet,19,42
+UKLON01,UKLON01-RK-02,IT,active,Infrastructure,4-post cabinet,19,42
+UKLON01,UKLON01-RK-03,IT,active,Infrastructure,4-post cabinet,19,42
+UKLON01,UKLON01-RK-04,IT,active,Compute,4-post cabinet,19,42
+UKLON01,UKLON01-RK-05,IT,active,Storage,4-post cabinet,19,42
+USCHG01,USCHG01-RK-01,IT,active,Infrastructure,4-post cabinet,19,22
+USCHG01,USCHG01-RK-02,IT,active,Infrastructure,4-post cabinet,19,42
+USCHG01,USCHG01-RK-03,IT,active,Infrastructure,4-post cabinet,19,42
+USCHG01,USCHG01-RK-04,IT,active,Compute,4-post cabinet,19,42
+USCHG01,USCHG01-RK-05,IT,active,Storage,4-post cabinet,19,42

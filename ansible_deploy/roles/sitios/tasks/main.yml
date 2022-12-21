@@ -1,0 +1,22 @@
+---
+- include_vars: ../../vars_main.yml
+
+- name: Registrando sitios
+  read_csv:
+   path: sitios.csv
+  register: lista_sitios
+
+- name: Creando sitios
+  netbox.netbox.netbox_site:
+    netbox_url: "{{ nb_url }}"
+    netbox_token: "{{ nb_token }}"
+    data:
+      name: "{{ item.name }}"
+      slug: "{{ item.slug }}"
+      status: "{{ item.status }}"
+      region: "{{ item.region  }}"
+      tenant: "{{ item.tenant }}"
+      site_group: "{{ item.group  }}"
+    state: present
+  loop: "{{ lista_sitios.list }}"
+

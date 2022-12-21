@@ -1,13 +1,20 @@
 ---
 - include_vars: ../../vars_main.yml
 
+- name: Registrando regiones
+  read_csv:
+   path: regiones.csv
+  register: lista_regiones
+
 - name: Creando regiones
   netbox.netbox.netbox_region:
     netbox_url: "{{ nb_url }}"
     netbox_token: "{{ nb_token }}"
     data:
       parent_region:
-      name: Buenos_Aires
-      slug: bs_as
-      description: "Buenos Aires"
+      name: "{{ item.name }}"
+      slug: "{{ item.slug }}"
+      description: "{{ item.name }}"
     state: present
+  loop: "{{ lista_regiones.list }}"
+

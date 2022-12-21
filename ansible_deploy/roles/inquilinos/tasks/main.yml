@@ -1,0 +1,17 @@
+---
+- include_vars: ../../vars_main.yml
+
+- name: Crear inquilinos en netbox
+  netbox.netbox.netbox_tenant:
+    netbox_url: "{{ nb_url }}"
+    netbox_token: "{{ nb_token }}"
+    data:
+      name: "{{ item }}"
+    state: present
+  with_items:
+    - Consulting
+    - Sales
+    - Marketing
+    - Finance
+    - IT
+
